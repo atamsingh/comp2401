@@ -1,0 +1,85 @@
+====================================================
+Author:
+====================================================
+
+	Seena Rowhani
+	  100 945 353
+
+====================================================
+Date: 
+====================================================
+
+	Nov. 12th, 2014
+
+====================================================
+Deadline:
+====================================================
+
+	Nov. 24th, 2014
+
+====================================================
+Purpose:
+====================================================
+
+	A collection of functions to help the user manage the memory they are dynamically allocating blocks 
+	through implementation of a linked list.
+
+====================================================
+Files Included (excluding README):
+====================================================
+-rw-r--r-- 1 seena seena  2494 Nov 12 12:24 main
+	- ab3c6338a2bf28a1047e862e6784dc8e 			
+-rw-rw-r-- 1 seena seena  3975 Nov 12 13:07 mhDefs.c
+	- dbe957c191ac5168bf39216f1472be86
+-rw-r--r-- 1 seena seena   522 Nov 10 13:24 mhDefs.h
+	- 1161a8a33a7ca50e2cdea06e2864e5f5
+-rw-r--r-- 1 seena seena   348 Nov 10 12:10 stuDefs.h
+	- d513ca008cdb1e9f712b0748e29cbddd
+----------------------------------------------------
+-rw-rw-r-- 1 seena seena   139 Nov 12 19:12 Makefile
+	- c8cd95f676067b1e1951233f6b8e68af
+
+====================================================
+Source File(s):
+====================================================
+
+	main.c 	 - 2.5 kb
+	mhDefs.c - 3.9 kb
+
+====================================================
+Header Files:
+====================================================
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+
+	#include "mhDefs.h"
+	#include "stuDefs.h"
+
+===================================================
+Launching Instructions:
+====================================================
+	1. Open Terminal
+	2. Navigate to folder directory of the project
+	3. Compile Code
+		- Using your keyboard, enter the following: 
+			make
+	4. Execute code:
+		- Using your keyboard, enter the following:
+			./output
+		- Alternatively, to test memory leakage, use valgrind
+			valgrind ./output
+	5. Cleaning directory
+		- Using your keyboard, enter the following:
+			make clean
+			**This should delete all the object files, leaving 
+			you with the executable as well the c and header
+			files.
+
+====================================================	
+Operating Instructions:
+====================================================
+
+	Program runs on execution, no user input is required.
+

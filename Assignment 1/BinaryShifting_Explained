@@ -1,0 +1,18 @@
+n=2 therefore 0000001 is 0000010 which is 4 (2^2)
+0011010 = 2^1 + 2^3 + 2^4 = 2 + 8 + 16 = 28
+0000100 &
+=======
+0000000 >> n=2 = 0000000
+
+Therefore 0000000 = 0
+The bit at index 2 (0,1,2) from the right side is 0.
+
+Lets say n=1
+
+0000001 << 1 = 0000010
+
+0011010
+0000010 &
+= 0000010 >> 1
+= 0000001 = 0
+The bit at index 1 (0,1) from the right side is a 1 (not a 0)

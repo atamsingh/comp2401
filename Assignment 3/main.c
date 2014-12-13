@@ -1,0 +1,194 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "mhDefs.h"
+#include "stuDefs.h"
+//Sample structures used to test functionality (A,B,C)
+//===================================
+typedef struct{
+  int a;
+  double b;
+  long c;
+} A;
+
+typedef struct{
+  int a;
+  char b;
+  short c;
+}B;
+
+typedef struct{
+  char a[10];
+  unsigned char b;
+  long d;
+}C;
+//===================================
+
+/*
+* Function: mh_init
+* Purpose: 
+*   Initialize the heap, by allocating room for blocks,
+*   and settings numBlocks to 0
+* Params: HeapType *
+* Return: void
+*/
+void mh_init(HeapType *heap){
+  heap->blocks    = (BlockType *) malloc(sizeof(BlockType) * MAX_BLK);
+  heap->numBlocks = 0;
+}
+
+/*
+* Function: mh_cleanup
+* Purpose:
+*   Frees the space occupied by heap's block member
+* Params: HeapType *
+* Return: void
+*/
+void mh_cleanup(HeapType *heap){
+  free(heap->blocks);
+}
+
+/*
+* Function: mh_alloc
+* Purpose:  
+*   Allocate space for a block and append it to
+*   member 'blocks' of heap, and initialize block
+* Params: HeapType *, int, char *
+* Return: void *
+*/
+void *mh_alloc(HeapType *heap, int n, char *label){
+  void *b = malloc(n); //create block pointer
+  b -> addr = b; //set address to pointer
+  b -> size = n;
+  b -> rsv = C_TRUE;
+  strcpy(b->tag, label);
+  heap->blocks[(heap->numBlocks++)] = ;
+  return b;
+  
+}
+
+/*
+* Function: mh_dealloc
+* Purpose:
+*   Deallocate the memory of each block inside of heap's
+*   block member if there is reserved data at the block's
+*   corresponding address.
+* Params: HeapType *, void *
+* Return: void
+*/
+void mh_dealloc(HeapType *heap, void *addr){
+  int i;
+  for(i = 0 ; i < (heap->numBlocks) ; i++){
+    if(heap->blocks[i].rsv)
+      if(heap->blocks[i].addr == addr){
+        heap->blocks[i].rsv = C_FALSE;
+        free(addr);
+        break;
+      }
+  }
+}
+
+/*
+* Function: mh_count
+* Purpose:
+*   Gets the sum of all reserved block's sizes
+* Params: HeapType *
+* Return: int
+*/
+int mh_count(HeapType *heap){
+  int c = 0, i;
+  for(i = 0 ; i < heap -> numBlocks ; i++)
+    if(heap->blocks[i].rsv)
+      c += heap -> blocks[i].size;
+  return c;
+}
+
+/*
+* Function: mh_dump
+* Purpose: 
+*   Prints the information corresponding to each 
+*   reserved block
+* Params: HeapType *
+* Return: void
+*/
+void mh_dump(HeapType *heap){
+  int i;
+  for(i = 0 ; i < heap -> numBlocks ; i++)
+    if(heap->blocks[i].rsv)
+      printf("%*s:%*d bytes stored at %p\n",10,
+              heap -> blocks[i].tag,
+              20,
+              heap -> blocks[i].size,
+              heap -> blocks[i].addr
+            );
+}
+
+/*
+* Function: mh_collect
+* Purpose:
+*   A garbage collection function that deallocates
+*   all memory tracked in the blocks array
+* Params: HeapType *
+* Return: void
+*/
+void mh_collect(HeapType *heap){
+  int i;
+  for(i = 0 ; i < heap->numBlocks ; i++)
+    if(heap->blocks[i].rsv){
+      heap->blocks[i].rsv = C_FALSE;
+      free(heap->blocks[i].addr);
+    }
+}
+
+/*
+* Function: main
+* Purpose:
+*   Testing functionality
+* Params: int argc, char* argv[]
+* Return: int
+*/
+int main(int argc, char *argv[])
+{
+  HeapType  *heap;
+  void      *ptr1, 
+            *ptr2, 
+            *ptr3, 
+            *ptr4,
+            *ptr5,
+            *ptr6,
+            *ptr7,
+            *ptr8,
+            *ptr9,
+            *ptr10;
+
+  heap = (HeapType *) malloc(sizeof(HeapType));
+  mh_init(heap);
+
+  ptr1 = mh_alloc(heap, 5*sizeof(int), "ints");
+  ptr2 = mh_alloc(heap, 10*sizeof(double), "doubles");
+  ptr3 = mh_alloc(heap, 8*sizeof(char), "chars");
+  ptr4 = mh_alloc(heap, 12*sizeof(StudentType), "Students");
+
+  printf("\nDUMP 1, byte count = %d\n", mh_count(heap));
+  mh_dump(heap);
+
+  mh_dealloc(heap, ptr1);
+  mh_dealloc(heap, ptr2);
+  mh_dealloc(heap, ptr3);
+
+  printf("\nDUMP 2, byte count = %d\n", mh_count(heap));
+  mh_dump(heap);
+
+  mh_collect(heap);
+
+  printf("\nDUMP 3, byte count = %d\n", mh_count(heap));
+  mh_dump(heap);
+  printf("\n\n");
+
+
+  mh_cleanup(heap);
+  free(heap);
+
+  return 0;
+}

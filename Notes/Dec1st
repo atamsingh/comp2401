@@ -1,0 +1,57 @@
+6.3 Program Organization
+========================
+Notes taken by: Seena Rowhani
+========================
+	1. Memory Organization
+		Based on the declaration characteristics
+			Data type
+			Modifier
+				Change the number of bits used
+				Specify the type, don't change the data type they modify it
+			Qualifier
+				For optimization, hints for compiler to make things 'easier'
+				ex. const, volatile->no optimizaitons pls
+			Storage Class
+				Specifies an area in memory where the variable is stored
+				Indicates if a variable is declared in another file
+				Areas of Virtual Memory?
+					Code segment
+					function call stack
+						Paramaters as well as local variables
+					Data segment
+						Heap is part of the data segment
+						Literals, global variables, and *static variables*
+						Global memory**
+					Heap
+						Dynamically allocated memory
+				Indicates whether stored in data segment or function call stack
+
+				Types
+					auto -> int i =10; //auto variable
+						default storage class and stored in function call stack
+						Limited to scope of the block
+					static
+						stored in data segment (global mem not global var)
+						exist until program ends
+						Not limited to scope*, but cannot be used outside of the block ******
+					extern
+						Indicates that a variable is global and declared in another file
+						Stored in te register rather than the memory
+						A good compiler will perform this optimization anyways!
+					regular
+						-- I guess we dont need it lol --
+					mutable	
+						Allows the const-ness to change --> immutable means that data is only set via copies	
+
+	2. Code Organizaiton
+
+	
+	Scope
+		-> The area in which you are able to access local variables
+		Indicates where in the program where a variable can be used
+		Types
+			block
+			file
+			funciton prototype
+
+		The most local variable takes priority

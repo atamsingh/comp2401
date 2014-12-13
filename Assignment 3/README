@@ -1,0 +1,48 @@
+Author:
+	Seena Rowhani
+
+Deadline:
+	Nov. 6th, 2014
+
+Purpose:
+	A collection of functions to help the user manage the memory they
+	are dynamically allocating.
+
+Files Included (excluding README):
+
+    da18806f9cab324efd86c9024d4ded9a  main.c
+
+    f1851600e8cd3f9437d3161fcb5f3540  mhDefs.h
+
+    d019264e5b53f0ae8149ae047e9d4a57  stuDefs.h
+
+
+Source File(s):
+	main.c 	- 5.8 kb
+
+Header Files:
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <string.h>
+
+	#include "mhDefs.h"
+	#include "stuDefs.h"
+
+Launching Instructions:
+
+	Compiling:
+		gcc main.c
+	Executing:
+		./a.out
+		valgrind ./a.out
+
+Operating Instructions:
+	Program runs on execution, no user input is required.
+
+Addressing Constraints:
+	Header files have been included.
+	No global variables have been used
+	Compound data types are passed by reference
+	Valgrind shows no memory leaks, and no suppressed errors
+	Functions have been utilized, and reused where possible
+	Every function has comments explaining corresponding information

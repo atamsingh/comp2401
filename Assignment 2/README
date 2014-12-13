@@ -1,0 +1,32 @@
+Seena Rowhani
+Assignment 2
+
+You will write a program in C, in the Ubuntu Linux environment, to help the user compute their final grade in a course, 
+based on multiple weighting schemes. Your program will prompt the user to enter the major course components. 
+These are the items that are given weights in the course outline, for example Assignments, Tutorials, Tests, Final 
+exam, etc. Then your program will prompt the user to enter some weighting schemes, with one value for each course 
+component. For example, one weighting scheme could have 50% for Assignments, 10% for Tutorials and 40% for the 
+Final exam. Another weighting scheme could weigh the Assignments at 40% and the Final exam at 60%. Finally, your 
+program will prompt the user to enter the grade they received for each component, and print out the final grade the 
+user would get based on each weighting scheme.
+
+
+In this assignment, you will:
+• define the data type that represents the collection of course components and weighting schemes
+• break down the required functionality into modular, reusable functions
+• write the functions to prompt the user for the required course component and weighting scheme data, as well as 
+the user’s grades, and compute a final grade using each weighting scheme
+
+Source Code:
+ - a2.c
+
+Headers:
+stdlib.h
+stdio.h
+
+Compilation command
+ - gcc a2.c
+
+Launch file, follow prompts, outputs grades.
+
+
