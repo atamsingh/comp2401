@@ -1,0 +1,27 @@
+10.2 Randomized Meldable Heap
+	Operations
+		Meld(h1,h2)
+			also referred to as merge
+			compares to see which heap is appendee vs. appender
+		MakeHeap(x)
+		add(x)
+			Meld(new Heap(x), h2)
+		remove()
+			Removes smallest value in the heap
+				Stored at the root
+				Removing the first node splits two heaps.
+				Then meld those two heaps
+		remove(p)
+			Takes a pointer to a node
+			Just cut it out.
+			return Meld(Meld(p->parent, p->left), p->right)
+	
+	What is a heap?
+		Heap Property
+			The priority of a node is smaller than each of its children
+		
+
+	How do we meld / merge to Heaps?
+		1. First compare what heap is the original by comparing priority of
+			head nodes
+		2. 

@@ -1,0 +1,38 @@
+Section 3 - Memory Management
+
+	OS Allocates four areas of memory on program startup
+		Code Segment
+			Program Instructions
+			Address of functions
+		Data Segment
+			Global Memory
+				Global Variables
+				Static Variables
+				Literals
+					Notation for representing fixed value. (ints, chars etc.)
+
+		Function Call Stack
+            Purpose
+                Manages the order of the function calls, and stores local variables
+			Local Data
+		Heap (Part of Data Segment)
+			Dynamically allocated memory
+
+void push(eIOfseoifj, esofihesofhies){
+  
+  if( data->size + 1 > data->capacity){
+      ElementType **temp = data -> elements
+      
+      data->elements = (ElementType **) malloc (2* data->capacity * sizeof(ElementType *))
+      int i;
+      for(i = 0 ; i < size ; i++){
+          data->elements[i] = temp[i]
+    }
+  
+  data->elements[data->size++] = element;
+
+}
+
+  malloc(sizeofBlockType)
+
+  calloc(1, sizeof(BlockType))
