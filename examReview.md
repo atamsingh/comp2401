@@ -590,7 +590,7 @@ __Signal from Command Line__
 
 Good PDF file explaining the Client / Server model of networking, as well as the system calls that go along with it.
 
-<a href='network.pdf' download>network.pdf</a>
+<a href='network.pdf?raw=true' download>network.pdf</a>
 
 
 ###Additional Information
