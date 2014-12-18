@@ -48,7 +48,8 @@ Basics of Programming
 **Integer Types**
 
 
-<table class='src'><tr><th>Type</th><th>Storage size</th><th>Value range</th></tr>
+<table>
+<tr><th>Type</th><th>Storage size</th><th>Value range</th></tr>
 <tr><td>char</td><td>1 byte</td><td>-128 to 127 or 0 to 255</td></tr>
 <tr><td>unsigned char</td><td>1 byte</td><td>0 to 255</td></tr>
 <tr><td>signed char</td><td>1 byte</td><td>-128 to 127</td></tr>
@@ -61,14 +62,17 @@ Basics of Programming
 <table>
 
 <strong>Floating Point Types</strong>
-<table class="src">
+
+<table>
 <tbody><tr><th>Type</th><th>Storage size</th><th>Value range</th><th>Precision</th></tr>
 <tr><td>float</td><td>4 byte</td><td>1.2E-38 to 3.4E+38</td><td>6 decimal places</td></tr>
 <tr><td>double</td><td>8 byte</td><td>2.3E-308 to 1.7E+308</td><td>15 decimal places</td></tr>
 <tr><td>long double</td><td>10 byte</td><td>3.4E-4932 to 1.1E+4932</td><td>19 decimal places</td></tr>
-</tbody></table>
+</tbody>
+</table>
 
 ###Passing By Value vs. Reference
+
 
 Passing by reference is when you supply a pointer to a data type to a function. This allows for **return parameters**
 
