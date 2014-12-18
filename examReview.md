@@ -591,3 +591,16 @@ __Signal from Command Line__
 Good PDF file explaining the Client / Server model of networking, as well as the system calls that go along with it.
 
 <a href='network.pdf' download>network.pdf</a>
+
+
+###Additional Information
+
+Writing in Hex
+
+See the conversion table here:
+
+http://ascii.cl/conversion.htm
+
+1. `0x` denotes hexadecimal
+2. Highest order bit is left most after `0x`.
+3. Each value is multipled by 16<sup>i</sup>
