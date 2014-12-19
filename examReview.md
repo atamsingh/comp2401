@@ -146,6 +146,10 @@ __Bit Models__
 	
 	*This can be described as an __Arithmetic Overflow__*
 	
+	Test 1 **Questions b and c**
+	
+
+=
 - Floating Point Bit Model
 
 <table class="tg">
