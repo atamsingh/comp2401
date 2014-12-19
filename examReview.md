@@ -613,9 +613,8 @@ http://ascii.cl/conversion.htm
 ###Storage Classes
 
 __extern__ is used to give a reference of a global variable from another C-file within the **same program**.
-
 Tells the compiler not to declare a new variable, but refer to a variable declared elsewhere.
 
-__auto___ is the default storage class for __all local variables__. Limited to the scope given.
+__auto__ is the default storage class for __all local variables__. Limited to the scope given.
 
 __static__ is the default storage class for __all global variables__.
