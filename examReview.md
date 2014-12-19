@@ -474,7 +474,7 @@ This can be achieved by `\n` or `fflush(out);`
 
 Fixed chunk of memory is filled before being passed to the reciever
 
-Good for large chunks of data. More efficient. (think cargo ships)
+Good for large chunks of data. More efficient.
 
 **Line Buffer**
 
