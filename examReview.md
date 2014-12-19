@@ -447,12 +447,29 @@ The files that are to the right of `:` are known as the prerequisites. In the ex
 
 **Libraries**
 
-A set of commonly used functions
+Library consists of:
 
-`name.h` is a library file
-`#include name.h` is how you use it. 
+1. Header file
+2. Archive file (.a consists of all object files
 
-Library files are good for predefining constants, and functions. Sort of like an interface in Java.
+__Linking an Archive File__
+
+`gcc myProg.c -myArchive`
+
+__Linking Object Files__
+
+`gcc -o myprog main.c somelib.o`
+
+__Creating and using your own library__
+
+1. Create an interface (header file mylib.h)
+2. Create an implementation of your library (mylib.c)
+3. Create a library object file that can be linked with programs that make use of library code
+4. Use the library in other C code by:
+	1. `#include "mylib.h"
+	2. Link in the library when compiling the executable file
+
+Library files provide a set of constants and functions that can be used by the program including it.
 
 ###Input and Output
 Transaction occurs when a program receives bytes from a source or sends bytes to a destination.
@@ -544,7 +561,7 @@ If a fork is successful, it will return **twice**.
 
 	Return:
 	child process  -> 0
-	parent process -> Process ID -> >= 0
+	parent process -> Process ID of child -> >= 0
 	fork failed    -> -1
 	
 `exec()` Family:
