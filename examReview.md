@@ -437,7 +437,7 @@ The files that are to the right of `:` are known as the prerequisites. In the ex
   <tr>
     <td class="tg-031e">linking</td>
     <td class="tg-031e">[no flags]</td>
-    <td class="tg-031e"></td>
+    <td class="tg-031e">executable</td>
   </tr>
 </table>
 
